@@ -58,7 +58,7 @@ jobs:
     - name: Build web app
       run: npx expo export -p web
     
-    - name: Bypass Jekyll:
+    - name: Bypass Jekyll
       run: touch dist/.nojekyll
 
     # https://github.com/marketplace/actions/upload-github-pages-artifact
