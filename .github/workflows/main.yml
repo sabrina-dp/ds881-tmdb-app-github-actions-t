@@ -67,3 +67,22 @@ jobs:
       uses: actions/upload-pages-artifact@v5.0.0
       with:
           path: dist/
+  
+  # https://github.com/marketplace/actions/deploy-github-pages-site
+  
+  deploy:
+    needs: build
+
+    # Garante ao GITHUB_TOKEN permissões para fazer deploy no pages 
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5.0.0
