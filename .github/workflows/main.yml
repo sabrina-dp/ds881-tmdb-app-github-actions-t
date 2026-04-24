@@ -33,5 +33,9 @@ jobs:
         run: npm test
     
   build-and-deploy:
+  name: Build and Deploy
+  runs-on: ubuntu-latest
+  needs: test
+  steps:
     - name: Create .env file
       run: echo "EXPO_PUBLIC_TMDB_API_KEY=${{ secrets.TMDB_API_KEY }}" > .env
