@@ -45,6 +45,7 @@ jobs:
   # https://github.com/marketplace/actions/deploy-github-pages-site
 
   deploy:
+    name: Deploy
     needs: build
 
     # Garante ao GITHUB_TOKEN permissões para fazer deploy no pages 
