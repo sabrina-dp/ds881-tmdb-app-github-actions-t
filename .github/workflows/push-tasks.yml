@@ -119,6 +119,9 @@ jobs:
     needs: [build-android, deploy]
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Download APK
         uses: actions/download-artifact@v4
