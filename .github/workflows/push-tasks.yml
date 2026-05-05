@@ -73,7 +73,6 @@ jobs:
 
   build-android:
     name: Build Android (APK)
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
