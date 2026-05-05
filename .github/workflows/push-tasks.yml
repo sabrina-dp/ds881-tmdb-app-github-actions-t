@@ -98,7 +98,7 @@ jobs:
         run: echo "EXPO_PUBLIC_TMDB_API_KEY=${{ secrets.TMDB_API_KEY }}" > .env
 
       - name: Expo Prebuild
-        run: npx expo prebuild --platform android
+        run: npx expo prebuild --platform android --no-install
 
       - name: Set permissions for Gradlew
         run: chmod +x android/gradlew
